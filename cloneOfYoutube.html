@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Youtube</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                padding: 0%;
+                margin: 0%;
+            }
+
+            #container{
+                width:100%;
+                background-color: white;
+                margin-top: 0%;
+                position: fixed;
+               
+            }
+            #nav{
+                height:50px;
+                width:100%;
+                display: flex;
+            }
+            #nav > div:nth-child(2){
+                width:60%;
+                height:100%;
+                border-bottom:1px solid grey;
+                margin:auto;
+               
+            }
+            #nav > div:nth-child(3){
+                height:100%;
+                width:20%;
+                border-bottom:1px solid grey;
+                margin: auto;
+                display: flex;
+                gap:10px;
+                
+            }
+            #nav > div:nth-child(3)>div{
+                margin-left: 40px;
+                margin-top:5px;
+                height:70%;
+              
+            }
+            #nav > div:nth-child(1){
+                width:20%;
+                height:100%;
+                display: flex;
+             
+            }
+            #nav > div:nth-child(1)>div{
+                margin:auto;
+            }
+            .youIcon{
+                height:100%;
+              
+            }
+            .youIcon>img{
+                height:70px;
+                width:90px;
+                margin-top: 0px;
+                margin-right: 40px;
+            }
+            .fas2{
+                margin-top:20px;
+            }
+
+             .thead:nth-child(1){
+                border:1px solid grey;
+                 width:500px;
+                 
+             }
+             .thead:nth-child(2){
+               width:60px;
+                
+             }
+             #input{
+                 height:30px;
+                 border:none;
+                 width:99%;
+                 
+                
+             }
+             #table{
+                 border-collapse: collapse;
+                 border:1px solid grey;
+                 margin-left:80px;
+                 margin-top:10px;
+                 
+             }
+             #btn1{
+                 border:none;
+                 width:100%;
+                 height:32px;
+             }
+             #btn1,i:hover{
+                cursor: pointer;
+             }
+       
+             .fas{
+                 font-size: 20px;
+             }
+             #image1{
+                 border-radius: 50%;
+                 height:34px;
+                 
+             }
+             #nav2{
+             
+                 height:50px;
+                 width:80%;
+                 margin-left:20%;
+                 border-bottom: 1px solid gray;
+                 display: flex;
+
+             }
+             #nav2 > div{
+              
+                padding:10px;
+             }
+             #nav2 > div > button{
+                
+                padding:8px;
+                border-radius: 15px;
+                border:1px solid gray;
+             }
+             #nav2 > div > button:hover{
+                 cursor: pointer;
+                 background-color: black;
+                 color:white;
+
+             }
+             #Extra{
+                 
+                 width:100%;
+                 height: 100px;
+                
+             }
+             #main{
+                 display:flex;
+                 /* grid-template-columns: repeat(2, 1fr); */
+             }
+             #allVideos{
+                display: grid;
+                grid-template-rows: 250px;
+                 grid-template-columns: repeat(4, 1fr);
+                 grid-gap: 10px;
+                 background-color: rgb(245, 243, 243);
+                
+                 width:80%;
+                 min-height: 800px;
+                 margin-left: 20%;
+             }
+             #allVideos > div{
+                 width:90%;
+                
+                 padding:5px;
+                 height:250px;
+                 overflow: hidden;
+             }
+
+             #allVideos > div:hover{
+                
+                cursor: pointer;
+
+             }
+             #allVideos > div >img{
+                 width:100%;
+                 height:170px;
+             }
+             #Option{
+                 width:18%;
+                 margin:auto;
+                 height:400px;
+             
+                 position: fixed;
+             }
+             #Option  > div{
+                width:100%;
+                height:50px;
+              
+                display: flex;
+                
+             }
+             #Option  > div:nth-child(3){
+                 border-bottom:1px solid gray;
+
+             }
+             #Option  > div >div{
+                 margin-left: 15px;
+                
+           
+             }
+             #Option  > div >div:nth-child(2) {
+                
+                 padding:6px;
+                
+             }
+             #Option  > div >div:nth-child(2)>b>a {
+                text-decoration: none;
+                color: black;
+                font-size: 15px;
+                font-family: "Roboto", Arial, sans-serif;;
+
+             }
+
+
+    </style>
+    </head>
+    <body>
+        <div id = "container">
+        <div id = "nav">
+            <div>
+                <div><i class = "fa fa-reorder fa-2x fas2"></i></div>
+                <div class = "youIcon"><img src = "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube2_colored_svg-128.png" /></div>
+            </div>
+            <div>
+                <table id = "table">
+                    <tr >
+                        <th class = "thead"><input type = "text" id = "input" placeholder="  Search"/></th>
+                        <th class = "thead"><button onclick = "searchVideo()" id = "btn1"><i class="fa fa-search fa-2x fas"></i></button></th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                
+                <div><i class="fa fa-th fa-2x "></i></div>
+                <div><i class="fa fa-bell-o fa-2x "></i></div>
+                <div>  <img src="https://yt3.ggpht.com/yti/APfAmoGDIVDX_Mtv8xH_N4GROXNv5myKtzJ7jMS81g=s88-c-k-c0x00ffffff-no-rj-mo" id = "image1"/></div>
+                
+              </div>
+        </div>
+        <div id = "nav2">  
+            <div><button style = "background-color: black;color: white;">All</button></div>
+            <div><button>Mixes</button></div>
+            <div><button>Trending</button></div>
+            <div><button>Music</button></div>
+            <div><button>Movie musicals</button></div>
+            <div><button>Science fiction</button></div>
+            <div><button>Sci-fi films</button></div>
+            <div><button>Indian Army</button></div>
+            <div><button>Masai</button></div>
+            <div><button>Maps</button></div>
+            <div><button>Live</button></div>
+            <div><button>Marvel</button></div>
+        </div>
+ 
+    </div>
+        <div id = "Extra"></div>
+        <div id = "main">
+        <div id = "Option">
+            <div>
+                <div><i class="fa fa-home fa-2x "></i></div>
+                <div><b><a href = "">Home</a></b></div>
+            </div>
+            <div>
+                <div><i class="fa fa-compass fa-2x"></i></div>
+                <div><b><a href = "">Explore</a></b></div>
+            </div>
+            <div>
+                <div><i class="fa fa-tv fa-2x "></i></div>
+                <div><b><a href = "">Subscriptions</a></b></div>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id = "allVideos"></div>
+    </div>
+        
+    </body>
+</html>
+
+<script>
+    let allVideos = document.getElementById("allVideos");
+   
+    async function searchVideo(){
+        allVideos.innerHTML = null;
+
+        try{
+            let input = document.getElementById("input").value;
+
+            let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${input}&key=AIzaSyCocwDczg-fpOLIKauV2XwP_OHJI9GQhKg&type=video&maxResults=20&part=snippet`)
+     
+            let data = await response.json();
+
+            let arr = data.items;
+            appendVideos(arr)
+            console.log(data)
+        }
+        catch(err){
+            console.log(err)
+
+        }
+    }
+
+    searchVideos()
+    async function searchVideos(){
+        allVideos.innerHTML = null;
+
+        try{
+            
+
+            let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=cricket&key=AIzaSyCocwDczg-fpOLIKauV2XwP_OHJI9GQhKg&type=video&maxResults=30&part=snippet`)
+     
+            let data = await response.json();
+
+            let arr = data.items;
+            appendVideos(arr)
+            console.log(data)
+        }
+        catch(err){
+            console.log(err)
+
+        }
+    }
+    
+    const appendVideos = (arr) =>{
+
+        arr.forEach(({snippet, id: {videoId}}) => {
+            let div = document.createElement("div");
+            div.style.cursor = "pointer"
+
+            let title = document.createElement("p");
+            title.innerText = snippet.title;
+
+            let thumbnails = document.createElement("img");
+            thumbnails.src = snippet.thumbnails.medium.url;
+
+            let data_to_send = {
+                snippet,
+                videoId
+            };
+
+            div.onclick = () =>{
+                showVideo(data_to_send)
+            }
+
+            div.append(thumbnails,title);
+            allVideos.append(div)
+        })
+    }
+    function showVideo(data){
+        localStorage.setItem("clicked_video1", JSON.stringify(data));
+        window.location.href = "Y_video.html"
+    }
+</script>
